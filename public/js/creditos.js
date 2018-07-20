@@ -1,7 +1,28 @@
-$(document).ready(function(){
-  $( "#update" ).click(function( event ) {
+window.onload = function() {
+
+  // swal('This is your money making area');
+
+
+
+
+  $(document).ready(function(){
+      $("#agregarCredito").click(function(){
+          $("#form1").toggle();
+      });
+
+  });
+
+
+
+
+
+
+
+
+//por clase porque por id se pisaban
+  $( "form.delete-form" ).click(function( event ) {
     event.preventDefault();
-    var href = $(this).attr('href');
+
         var message = $(this).data('confirm');
 
         swal({
@@ -13,13 +34,15 @@ $(document).ready(function(){
         })
         .then((actualiza) => {
           if (actualiza) {
-            swal("Actualizando!", {
-              icon: "success",
-            });
-            window.location.href = href;
+
+            this.submit();
           } else {
             swal("No paso nada!");
           }
         });
   });
-});
+
+
+
+
+  }
